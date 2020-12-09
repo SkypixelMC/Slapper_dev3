@@ -1,7 +1,7 @@
 ---
 name: Slapper
 author: jojoe77777, Edit for Blaz3rd
-version: 1.5.3
+version: 1.5.2
 description: Slapper, the NPC plugin for PocketMine-MP
 main: slapper\Main
 api:
