@@ -41,7 +41,7 @@ class SlapperEntity extends Entity {
         $this->saveSlapperNbt();
     }
 
-    protected function sendSpawnPacket(Player $player): void {
+    protected function sendSpawnPacket(Pocketmine $player): void {
         $pk = new AddEntityPacket();
         $pk->entityRuntimeId = $this->getId();
         $pk->type = static::TYPE_ID;
@@ -50,8 +50,9 @@ class SlapperEntity extends Entity {
         $pk->pitch = $this->pitch;
         $pk->metadata = $this->getDataPropertyManager()->getAll();
         unset($pk->metadata[self::DATA_NAMETAG]);
+    }
 
-        $player->dataPacket($pk);
+        $player->dataPacket(Protocol $AddActorPacket); void {
 
         $pk2 = new AddPlayerPacket();
         $pk2->entityRuntimeId = $this->tagId;
