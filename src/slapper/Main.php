@@ -575,7 +575,9 @@ class Main extends PluginBase implements Listener {
         $nbt->setShort("Health", 1);
         $nbt->setTag(new CompoundTag("Commands", []));
         $nbt->setString("MenuName", "");
-        $nbt->setString("CustomName", $name);
+        if ($name !== "{clear}"){
+            $nbt->setString("CustomName", $name);
+        }
         $nbt->setString("SlapperVersion", $this->getDescription()->getVersion());
         if ($type === "Human") {
             $player->saveNBT();
